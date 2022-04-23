@@ -1,0 +1,39 @@
+{% extends "homepage/base.html" %}
+{% load static %}
+
+
+<!-- Projects Section -->
+{% block content %}  
+  <section id="projects" class="projects-section bg-light">
+    <div class="mx-auto text-center">
+      <h1>Projects</h1>
+    </div>
+    <br></br>
+    
+    <div class="container">
+      {% for project in projects %}
+        <!-- Project Row -->
+        <div class="row justify-content-center no-gutters mb-5 mb-lg-0">
+          <div class="col-lg-6">
+            <a href="{% url 'project-detail' project.id %}">
+            <img class="img-fluid mb-3 mb-lg-0" src="{{ project.image.url }}" alt="">
+            </a>
+          </div>
+          <div class="col-lg-6">
+            <div class="bg-black text-center h-100 project">
+              <div class="d-flex h-100">
+                <div class="project-text w-100 my-auto text-center text-lg-left">
+                  <a class="text-white-50 mb-0" href="{% url 'project-detail' project.id %}">{{ project.date }}</a>
+                  <h4><a class="text-white" href="{% url 'project-detail' project.id %}">{{ project.title }}</a></h4>
+                  <p><a class="mb-0 text-white-50" href="{% url 'project-detail' project.id %}">{{ project.description }}</a></p>
+                  <hr class="d-none d-lg-block mb-0 ml-0">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br>
+      {% endfor %}
+    </div>
+  </section>
+{% endblock %}

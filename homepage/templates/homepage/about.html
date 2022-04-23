@@ -1,0 +1,44 @@
+{% extends "homepage/base.html" %}
+
+{% block content %}
+  {% for detail in details %}
+    <section id="projects" class="projects-section bg-light">
+      <div class="mx-auto text-center">
+        <h1>About</h1>
+      </div>
+      <br></br>
+      
+      <div class="container">
+
+        <!-- Featured Project Row -->
+        <div class="row align-items-center no-gutters mb-4 mb-lg-5">
+          <div class="col-xl-4">
+            <img class="img-fluid mb-3 mb-lg-0" src="{{ detail.image.url }}" alt="">
+          </div>
+          <div class="col-xl">
+            <div class="featured-text text-center text-lg-left">
+              <h4>Background</h4>
+              <p class="text-black-50 mb-0">
+                I am a Computer Science graduate student attending Ira A. Fulton Schools of Engineering at Arizona State University.<br><br>
+                My coding language of choice is Python, and I was thrilled to further hone my skills with it while working as a Software Developer Intern.<br><br>
+                Overall, my key areas of interest are data analysis, data visualization, statistics, databases, big data, machine learning, deep learning, and data science.
+              </p>
+              <br>
+              <h4>Education</h4>
+              <p class="text-black-50 mb-0">
+                <b>Ira A. Fulton Schools of Engineering at Arizona State University</b><br>
+                Master's degree, Computer Science<br>
+                GPA: 4.00/4.00<br>
+                Current Student<br><br>
+                <b>San Diego State Univeristy</b><br>
+                Bachelor's degree, Computer Science<br>
+                GPA: 3.50/4.00<br>
+                Graduated August 2019
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  {% endfor %}
+{% endblock content %}
